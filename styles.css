@@ -1,0 +1,603 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #070707;
+    color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2e2e2ef4;
+    width: 270px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left:0;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    color: #ff5e57;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.logo span {
+    font-weight: bold;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: #aaa;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+}
+
+
+.sidebar nav ul li a:hover {
+    color: #57ff6d;
+}
+/* Hide all sections by default */
+section {
+    display: none;
+}
+
+/* Show active section */
+section.active, .home-section {
+    display: block;
+}
+
+/* Content styling */
+.content {
+    margin: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Home Section */
+.home-section {
+    margin-left: 250px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-section .content {
+    max-width: 600px;
+}
+
+.home-section .content h1 {
+    font-size: 48px;
+}
+
+.home-section .content .name {
+    color: #ff5e57;
+}
+
+.home-section .content h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.home-section .content .highlight {
+    color: #ff5e57;
+}
+
+.home-section .content p {
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+.home-section.active {
+    display: flex; /* Ensures the layout remains intact when active */
+}
+.social-media a svg {
+    margin: 1% 12px;
+    border: 2px solid rgb(47, 49, 189);
+    box-shadow: 0 0 40px rgb(47, 49, 189);
+    border-radius: 50%;
+    background:rgb(4,4,9);
+    animation: slideRight 2s ease forwards;
+  }
+
+  /* About Section */
+.about-section {
+    padding: 50px 20px;
+    margin-left: 270px;
+    background: linear-gradient(155deg, #090989, #12a8b2, #db3b41);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden; /* To prevent elements from spilling out */
+    position: relative; /* For absolute positioned elements */
+}
+
+/* Animated Gradient Background */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.about-section {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+/* Crazy Sparkling Effect */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 60%);
+    animation: sparkle 8s linear infinite;
+    pointer-events: none; /* Prevent interaction */
+}
+
+@keyframes sparkle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Text Appearance Animation */
+.about-section .content p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+.about-section .content h1 {
+    font-size: 48px;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section .content li:hover {
+    color: #ffe259;
+    text-shadow: 0 0 10px rgba(255, 226, 89, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        margin-left: 0;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-section .content {
+        max-width: 100%;
+    }
+}
+/* Custom Bullet Style (Circular effect) */
+ul.bio-list, ul.projects-list, ul.goals-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.bio-list li, ul.projects-list li, ul.goals-list li {
+    position: relative;
+    padding-left: 35px; /* Adjust left padding for custom bullets */
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+ul.bio-list li::before, ul.projects-list li::before, ul.goals-list li::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 12px; /* Size of the circular bullet */
+    height: 12px;
+    background-color: #ce6312; /* Bullet color */
+    border-radius: 50%; /* Circle shape */
+    animation: bullet-pulse 1.5s ease-out infinite; /* Pulsing animation */
+}
+/* Pulsing Animation for Bullet */
+@keyframes bullet-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+
+/* Floating Particles Animation */
+.about-section .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+        transform: translateY(-50px) translateX(50px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+}
+
+/* Particle Generation */
+.particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.particle:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-duration: 5s;
+}
+
+.particle:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    animation-duration: 6s;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #cf9b18;
+    color: #0e0202;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #e74c3c;
+}
+
+.image-container img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Theme Options */
+.theme-options {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.settings-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.theme-colors {
+    display: none;
+    margin-top: 10px;
+}
+
+.theme-colors h4 {
+    margin-bottom: 10px;
+}
+
+.theme-colors .color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.theme-colors .red { background: #ff5e57; }
+.theme-colors .green { background: #1abc9c; }
+.theme-colors .orange { background: #f39c12; }
+.theme-colors .blue { background: #3498db; }
+.theme-colors .pink { background: #e84393; }
+
+.theme-options:hover .theme-colors {
+    display: block;
+}
+.multiple-text {
+       color: #ff5e57;
+}
+.visual {
+    position: fixed; /* Make it fixed on the page */
+    right: 20px; /* Adjust horizontal position */
+    top: 30%; /* Center vertically */
+    transform: translateY(-50%); /* Center correction */
+}
+
+
+.visual .image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5e57, #f8f9fa); /* Gradient border background */
+  padding: 5px; /* Space for the gradient border */
+}
+
+.visual .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes the image inside round as well */
+  display: block;
+}
+.logo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits properly within the circular area */
+}
+.achievements-section {
+    background: linear-gradient(155deg, #090989, #12a8b2, #db3b41);
+    padding: 40px; /* Add padding around content */
+    color: #fff; /* White text */
+    margin-left: 270px; /* Push it to align with the About Me section */
+    margin-top: -20px; /* Adjust spacing if necessary */
+}
+
+.side-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff5e57; /* Highlight line under heading */
+    display: inline-block;
+}
+
+.achievements-gallery {
+    display: flex;
+    gap: 15px; /* Space between images */
+    flex-wrap: wrap;
+}
+
+.achievements-gallery img {
+    width: 150px; /* Set image width */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.achievements-gallery img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+.achievements-section {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+/* Projects Section */
+.projects-section {
+    padding: 50px 20px;
+    margin-left: 270px;
+    background: linear-gradient(155deg, #0b0c60, #2a8fbf, #d9302b); /* Adjust gradient */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden; /* Prevent elements from spilling out */
+    position: relative; /* For absolute positioned elements */
+}
+
+/* Animated Gradient Background */
+.projects-section {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Text Appearance Animation */
+.projects-section .content p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.projects-section .content h1 {
+    font-size: 48px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Animation for Text */
+.projects-section .content p:hover {
+    color: #ffe259;
+    text-shadow: 0 0 10px rgba(255, 226, 89, 0.8);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Floating Particles Animation */
+.projects-section .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+        transform: translateY(-50px) translateX(50px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+}
+
+/* Particle Generation for Projects Section */
+.projects-section .particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.projects-section .particle:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-duration: 5s;
+}
+
+.projects-section .particle:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    animation-duration: 6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        margin-left: 0;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projects-section .content {
+        max-width: 100%;
+    }
+}
+
+/* Custom Bullet Style (Circular effect) for Projects List */
+ul.projects-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.projects-list li {
+    position: relative;
+    padding-left: 35px; /* Adjust left padding for custom bullets */
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+ul.projects-list li::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 12px; /* Size of the circular bullet */
+    height: 12px;
+    background-color: #ce6312; /* Bullet color */
+    border-radius: 50%; /* Circle shape */
+    animation: bullet-pulse 1.5s ease-out infinite; /* Pulsing animation */
+}
+
+/* Pulsing Animation for Bullet */
+@keyframes bullet-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+/* Hover effect for project item */
+.project-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

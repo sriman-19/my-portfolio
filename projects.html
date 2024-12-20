@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My projects- ABBADI SRIMAN REDDY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="profile_pic.jpg" width="150px" height="150px" alt="Analytica Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-user"></i>About</a></li>
+                    <li><a href="projects.html"><i class="fas fa-list"></i>Projects</a></li>
+                    <li><a href="skills.html"><i class="fas fa-code"></i>Skills</a></li>
+                    <li><a href="contact.html"><i class="material-icons">&#xe7fe;</i>Connect</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="about-section active">
+            <div class="content">
+                <h1 class="animated-title" >My Projects</h1>
+                <br>
+                <br>
+                <div class="bio-container">
+                    <ul class="bio-list">
+                       
+                </div>
+                <div class="projects">
+                    <br>
+                    <ul class="projects-list">
+                        <li>
+                            <h3>J.A.R.V.I.S</h3>
+                            <br>
+                            <p>Jarvis is a Python-based virtual assistant designed to automate daily tasks with innovative features. It includes secure face recognition for user authentication, voice command execution for opening apps, controlling media, and retrieving information. JARVIS manages tasks, sets alarms, and plays music on Spotify. It uses OCR to scan screen content and AI APIs to generate solutions for programming queries. With capabilities like scheduling, system control, and AI-driven problem-solving, JARVIS demonstrates expertise in AI, automation, and natural language processing.</p>
+                            <img src="jarvis project-logo.jpeg" width=35% height=35% alt="Jarvis AI Project Logo">
+                            <br><br>
+                            
+                            <p><button class="btn butt" onclick="location.href='https://github.com/sriman-19/J.A.R.V.I.S.git';">Source Code</button></p>
+                        </li>
+                        <li>
+                            <h3>HUMAN ACTIVITY RECOGNITION</h3>
+                            <br>
+                            <p>The Human Activity Recognition project uses time-series data to identify human activities. The academic version was built using an LSTM Recurrent Neural Network (RNN) with two LSTM layers and two fully connected layers, each with 64 units, processing 200-sample sequences. Data was preprocessed into smaller time slices for better analysis. The updated version improved this by using larger and more diverse datasets, optimizing the model through better tuning and architecture adjustments, which led to higher accuracy and better performance. This progression highlights significant improvements in activity recognition techniques.</p>
+                            <img src="human activity recognition-logo.jpg" width=35% height=35% alt="human activity recognition logo">
+                            <br><br>
+                            <p><button class="btn butt" onclick="location.href='https://github.com/sriman-19/AIML-ACADEMIC-PROJECT.git';">Source Code</button></p>
+                        </li>
+                        <li>
+                            <h3>MOVIE RECOMMENDATION SYSTEM</h3>
+                            <br>
+                            <p>Developed a personalized <strong>Movie Recommendation System</strong> using R, leveraging collaborative filtering techniques to suggest movies based on user preferences and historical data. Key functionalities include data preprocessing, genre-based filtering, and user-item similarity analysis using cosine metrics. Implemented <strong>Item-Based Collaborative Filtering (IBCF)</strong> with the <code>recommenderlab</code> library to predict top recommendations. Enhanced data visualization through heatmaps, bar plots, and distribution charts to illustrate patterns and trends. The system effectively demonstrates expertise in data analysis, machine learning, and recommendation model development.</p>
+                            <img src="movie recommendation system.jpg" width="35%" height="35%" alt="movie recommendation system logo">
+                            <br><br>
+                            <p><button class="btn butt" onclick="location.href='https://github.com/sriman-19/MOVIE_RECOMMENDATION_SYSTEM.git';">Source Code</button></p>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dynamic Animations -->
+        <div class="animation-bg">
+            <div class="animation-circle"></div>
+            <div class="animation-line"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+</html>

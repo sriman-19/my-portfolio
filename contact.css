@@ -1,0 +1,110 @@
+/* Ensure body takes up full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Main container stretches to full height */
+.main-container {
+    display: flex;
+    height: 100vh; /* Use full viewport height */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2e2e2ef4;
+    width: 230px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    color: #ff5e57;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.logo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits properly within the circular area */
+}
+.logo span {
+    font-weight: bold;
+}
+
+/* Sidebar navigation */
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: #aaa;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a:hover {
+    color: #57ff6d;
+}
+
+/* Contact Section (right content) */
+.contact-section {
+    margin-left: 270px; /* Align with sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4c6ef5, #fa5252);
+    color: white;
+    padding: 20px;
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #ffa94d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        margin-left: 0; /* Remove sidebar margin */
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+}
